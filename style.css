@@ -1,0 +1,142 @@
+
+
+
+body{
+    background-color: rgb(231, 232, 142);
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content:center;
+    padding-top: 30px;
+}
+
+header{
+  
+    color: #379723;
+    font-size: 50px;
+    padding: 0px;
+    margin-top: 20px;
+    text-decoration:underline;
+}
+
+h1{
+    /* color: #177f94; */
+    color: #2db8e3;
+    margin-top: 20px;
+    margin-bottom: 60px;
+    font-size: 40px;
+}
+
+#game-board {
+    height: 570px;
+    width: 570px;
+    display: grid;
+    flex-wrap:wrap;
+    /* background-image: linear-gradient(to bottom right, cornflowerblue, purple); */
+    background-image: radial-gradient(circle, #00d4ff 0%, #5c0067 110%);
+    position: relative;
+    z-index:0;
+    /* justify-content: center;
+    align-content: center; */
+    
+    }
+
+.cell {
+    width: 180px;
+    height: 180px;
+    background-color:rgb(231, 232, 142);
+    display:flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    /* position:relative; */
+    /* justify-content:center;
+    align-content:center; */
+    z-index:1;
+}
+
+
+#cell-1 {top:0; left:0;}
+#cell-2 {top:0; left:195px;}
+#cell-3 {right:0; top:0;}
+#cell-4 {left:0; top:195px;}
+#cell-5 {top:195px; left:195px;}
+#cell-6 {top:195px; right:0;}
+#cell-7 {left:0; bottom:0;}  
+#cell-8 {left:195px; bottom:0;} 
+#cell-9 {right:0; bottom:0;}   
+
+
+button{
+    border-color:#5c0067;
+    color:class="multicolortext";
+    background-color:#f8f395;
+    width: 140px;
+    height: 60px;
+    border-width:8px;
+    border-radius:1.5rem;
+    text-align: center;
+    font-size:large;
+    font-weight:600;
+    align-self: center;
+    margin:100px;
+}
+
+
+
+img { 
+width: 130px;
+height:130px;
+
+/* text-decoration-thickness: 50px; */
+}
+/* background-color:rgb(246, 221, 109);
+color:#6531b4;
+z-index:2;
+padding: 0; */
+/* display:flex; */
+/* position: absolute;
+place-self:center;
+align-self:center; */
+/* top:15px;
+right:15px; */
+/* filter: invert(100%);
+-webkit-filter: invert(100%); */
+
+
+
+
+ 
+
+
+
+/* justify-content:center;
+align-content:center;  
+} */
+
+/* #y{
+    width:140px;
+    height:140px;
+    background-color:rgb(246, 221, 109);
+    color:#6531b4;
+    z-index:1000;
+    display:flex;
+    position:relative;
+    justify-content:center;
+    align-content:center; 
+} */
+
+
+
+.multicolortext {
+    background-image: linear-gradient(to right, violet, rgb(195, 72, 219), cornflowerblue, green, violet, orange, #00d4ff, #be3fcd);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size:50px;
+  }
+ 
+
+  
+
