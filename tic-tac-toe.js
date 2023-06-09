@@ -1,32 +1,46 @@
-const x = document.createElement("img");
-  x.setAttribute("src", "images/Ximage.png");
-
-const o = document.createElement('img');
-   o.setAttribute("src", "images/daisy.svg");
-
 let gameActive = true;
-let currentPlayer = "x";   
-let currentPlayerArray = [];
- 
+let currentPlayer = "Player X"
+
+let PlayerXArray = [];
+let PlayerOArray = [];
+
+function playGame() {
+   updateCellStatus();
+   checkForWinner();
+   declarWinner();
+   resetGame();
+
+
+}
 
 function updateCellStatus(e) {
-   $(e).appendTo(currentPlayer);
+
+   const x = document.createElement("img");
+   x.setAttribute("src", "images/ButterflyX.png");
+
+   const o = document.createElement('img');
+   o.setAttribute("src", "images/FlowerO.png");
+
+   if (currentPlayer === "Player X") {
+      $(e).append(x);
+      PlayerXArray.push((e.id.charAt(5)));
+      }  else { 
+      $(e).append(o);
+      PlayerOArray.push((e.id.charAt(5)));
+   }
+
    e.removeAttribute("onclick");
-   currentPlayerArray.push((e.id.charAt(5)));
-   console.log("Ive been clicked by player " + currentPlayer);
-   console.log(currentPlayerArray);
-   currentPlayer = currentPlayer === "x" ? "x" : "o";
+   console.log("Ive been clicked by " + currentPlayer);
+   console.log('Player X: [' + PlayerXArray +  '] & Player O: [ ' + PlayerOArray + ']');
 }
 
-function checkForWinner() 
-   if (currentPlayerArray.includes(1)) {
-       return true;{
-   // console.log({checkForWinner});
+// function checkForWinner() 
+//    if (currentPlayerArray.includes(1)) {
+//        return true;{
+//    // console.log({checkForWinner});
   
-   // }
-       }
-}
-
+//
+ // currentPlayer = currentPlayer === "x" ? "x" : "o";
 
 
 // function changePlayer () {
@@ -36,8 +50,6 @@ function checkForWinner()
 
 
 
-   // let PlayerXArray = [];
-   // let PlayerOArray = [];
 
    
 
@@ -77,15 +89,19 @@ function checkForWinner()
  //playerArrayX.includes(1)) {
         //console.log(playerArrayX.includes('1'));
 
+if
+let winningCombination = 
+(1 && 2 && 3) || 
+(4 && 5 && 6) || 
+(7,8,9) || 
+(1,4,7) || 
+(2,5,8) || 
+(3,6,9) || 
+(1,5,9) || 
+(3,5,7);
 
 
-
-//  (1 && 2 && 3) || (4 && 5 && 6) || (7,8,9) || (1,4,7) || (2,5,8) || (3,6,9) || (1,5,9) || (3,5,7) {
-
-
-   //declare x
-
-
+ 
 
    // if containsX = true;
 //    //  1,2,3   4,5,6   7,8,9   1,4,7  2,5,8  3,6,9  1,5,9  3,5,7
