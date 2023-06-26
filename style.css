@@ -49,6 +49,7 @@ h1{
     position: absolute;
     justify-content: center;
     align-items: center;
+    /* border-radius: 0.5rem; */
     /* position:relative; */
     /* justify-content:center;
     align-content:center; */
@@ -68,18 +69,19 @@ h1{
 
 
 button{
-    border-color:#5c0067;
-    color:class="multicolortext";
-    background-color:#f8f395;
-    width: 140px;
-    height: 60px;
-    border-width:8px;
-    border-radius:1.5rem;
+ 
+    background-color: pink;
+    border-color: green;
+    width: 120px;
+    height: 50px;
+    border-width:6px;
+    border-radius:1rem;
     text-align: center;
     font-size:large;
-    font-weight:600;
+    font-weight:500;
     align-self: center;
-    margin:100px;
+    margin:80px;
+
 }
 
 
@@ -87,9 +89,23 @@ button{
 img { 
 width: 130px;
 height:130px;
+}
+
+#butterfly {
+    filter: brightness(220%);
+    filter: hue-rotate(70%);
+}
+
+#flower {
+filter: brightness(50%);
+filter: contrast(100%);
+filter: invert(90%);
+}
+
+
 
 /* text-decoration-thickness: 50px; */
-}
+
 /* background-color:rgb(246, 221, 109);
 color:#6531b4;
 z-index:2;
