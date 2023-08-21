@@ -1,25 +1,42 @@
 let gameActive = true;
-let currentPlayer = "Player X"
-
+let currentPlayer = "Player X";
+// let whoseTurn = $('h1');
+const whoseTurn = document.getElementById("whoseTurn");
 let playerXArray = [];
 let playerOArray = [];
+
+// let cell = $('.cell');
+whoseTurn.innerHTML = "X's Turn";
+// cell.addEventListener("mouseover", changeColor());
+
+// function changeColor () {
+//    if (currentPlayer === "Player X") {
+//       e.style="background-color:blue"
+//    }  else {
+//       e.style="background-color=pink"
+//    }
+// }
 
 function updateCellStatus(e) {
 
    const x = document.createElement("img");
-   x.setAttribute("src", "images/ButterflyX.png");
+   x.setAttribute("src", "images/ButterflyXPurple.png");
    x.setAttribute("id", "butterfly");
 
    const o = document.createElement('img');
    o.setAttribute("src", "images/FlowerOPastel.png");
    o.setAttribute("id", "flower");
 
+   let whoseTurn = $('h1');
+
    if (currentPlayer === "Player X") {
       e.append(x);
-      playerXArray.push((e.id.charAt(5)));
-      }  else {
+      playerXArray.push(parseInt(e.id.charAt(5)));
+      whoseTurn.innerText = "Y's Turn";
+      } else {
       e.append(o);
-      playerOArray.push((e.id.charAt(5)))
+      playerOArray.push(parseInt(e.id.charAt(5)))
+      whoseTurn.innerHTML = "O's Turn";
       }
 
    e.removeAttribute("onclick");
@@ -28,9 +45,42 @@ function updateCellStatus(e) {
    
    currentPlayer = currentPlayer === "Player X" ? "Player O" : "Player X";
 
-   let winCombination = (
-      ('4', '5', '6'))
-      //('1', '2', '3'))
+   // whoseTurn.innerHTML = "O's Turn";
+
+   // if (currentPlayer === "Player O") {
+   //    $(#whoseTurn).innerHTML = "O's Turn";
+   // }  else {
+   //   $(#whoseTurn).innerHTML = "X's Turn";
+   // }
+
+
+   }
+   
+   let winCombinations =  (4, 5, 6);
+
+   
+   //('4', '5', '6') || ('1', '2', '3');
+
+
+ //  let winners = [a, b, c];
+
+
+   // winners.some(hasAWinningLetter);
+   // function hasAWinningLetter(letter) {
+   //    return letter.includes
+   // }
+   
+   //= winner.includes()
+   // winCombinations.some(checkForWinner)
+
+   // function checkForWinner(playerOArray) {
+   //    playerOArray
+  // }= winCombination.some();
+
+//function checkForWinner(playerOArray) = playerOArray.includes(winCombination);
+
+      // ('4', '5', '6')   |
+      // ('1', '2', '3')
    ;
    
       // (1,2,3) || 
@@ -41,21 +91,23 @@ function updateCellStatus(e) {
 // (3,6,9) || 
 // (1,5,9) || 
 // (3,5,7)
-;
-   console.log(playerOArray.includes(winCombination));
+
+//console.log(playerOArray in winCombination);
+
+  console.log(playerOArray.includes(winCombinations));
    //checkForWinner();
  
-}
+
 function resetGame(e) {
    let allCells = $('.cell');
    allCells.empty(e);
    playerXArray = [];
    playerOArray = [];  
-   console.log(`Player X: [${playerXArray}] Player O: [${playerOArray}]`);
+ 
    console.log("Start New Game");
    location.reload();
 }
-
+console.log(`Player X: [${playerXArray}] Player O: [${playerOArray}]`);
 
 //function checkForWinner() {
    // if (playerXArray.includes('1') === true) {

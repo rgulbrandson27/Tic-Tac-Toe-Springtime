@@ -9,10 +9,9 @@
 </head>
 
 <body>
-    <!-- <header>TIC-TAC-TOE</header> -->
     <span class="multicolortext">TIC-TAC-TOE</span>
     <span class="multicolortext">Springtime Edition</span>
-    <h1>X's turn</h1>
+    <h1 id="whoseTurn">X's Turn</h1>
 
 
     <div id="game-board">
@@ -28,8 +27,9 @@
         <div class="cell" id="cell-8" onclick="updateCellStatus(this)"></div>
         <div class="cell" id="cell-9" onclick="updateCellStatus(this)"></div>
     </div>
-
-    <button onclick="resetGame(this)">Reset</button>
+    
+    <button onclick="resetGame(this)">New Game</button>
+    <img id="snail" src="images/CartoonSnail.png" onclick="resetGame(this)">
    
     <!-- <img id = "x" src="images/ButterflyX.png">
     <img id = "o" src="images/FlowerO.png">
@@ -44,8 +44,6 @@
 
 <script src="node_modules/jquery/dist/jquery.js"></script>
 <script src="tic-tac-toe.js"></script>
-
-
 
 
 </body>

@@ -1,40 +1,49 @@
-
-
-
 body{
-    background-color: rgb(231, 232, 142);
+    background-color: #fdffb6;
     display: flex;
     flex-direction: column;
     align-items:center;
     justify-content:center;
-    padding-top: 30px;
+    padding-top: 10px;
 }
 
-header{
-  
-    color: #379723;
-    font-size: 50px;
-    padding: 0px;
-    margin-top: 20px;
-    text-decoration:underline;
-}
+.multicolortext {
+    background-image: linear-gradient(to right, violet, rgb(195, 72, 219), cornflowerblue, green, violet, orange, #00d4ff, #be3fcd);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size:30px;
+  }
+
+/* @import url(1001fonts.com/nebulo-font.html); 
+
+
+
+  @font-face { 
+    font-family: ‘nebulo’; 
+    src: url(1001fonts.com/nebulo-font.html); 
+}  */
 
 h1{
     /* color: #177f94; */
-    color: #2db8e3;
-    margin-top: 20px;
-    margin-bottom: 60px;
-    font-size: 40px;
+    color:#00d4ff;
+    margin-top: 14px;
+    margin-bottom: 32px;
+    font-size: 30px;
+    font-weight: 400px;
+    /* font-family: 'nebulo'; */
 }
 
 #game-board {
-    height: 570px;
-    width: 570px;
+    height: 380px;
+    width: 380px;
     display: grid;
     flex-wrap:wrap;
     /* background-image: linear-gradient(to bottom right, cornflowerblue, purple); */
-    background-image: radial-gradient(circle, #00d4ff 0%, #5c0067 110%);
+    background-image: radial-gradient(circle, #00d4ff 0%, #ae35bb 110%);
     position: relative;
+    margin-bottom: 50px;
     z-index:0;
     /* justify-content: center;
     align-content: center; */
@@ -42,9 +51,9 @@ h1{
     }
 
 .cell {
-    width: 180px;
-    height: 180px;
-    background-color:rgb(231, 232, 142);
+    width: 120px;
+    height: 120px;
+    background-color:#fdffb6;
     display:flex;
     position: absolute;
     justify-content: center;
@@ -58,37 +67,39 @@ h1{
 
 
 #cell-1 {top:0; left:0;}
-#cell-2 {top:0; left:195px;}
+#cell-2 {top:0; left:130px;}
 #cell-3 {right:0; top:0;}
-#cell-4 {left:0; top:195px;}
-#cell-5 {top:195px; left:195px;}
-#cell-6 {top:195px; right:0;}
+#cell-4 {left:0; top:130px;}
+#cell-5 {top:130px; left:130px;}
+#cell-6 {top:130px; right:0;}
 #cell-7 {left:0; bottom:0;}  
-#cell-8 {left:195px; bottom:0;} 
+#cell-8 {left:130px; bottom:0;} 
 #cell-9 {right:0; bottom:0;}   
 
 
 button{
- 
-    background-color: pink;
-    border-color: green;
-    width: 120px;
-    height: 50px;
-    border-width:6px;
-    border-radius:1rem;
-    text-align: center;
-    font-size:large;
+    width: 86px;
+    height: 26px;
+    margin-top: 40px;
+    margin: 40px;
+   
+    border-style: solid;
+    background-color:#fdffb6;
+    border-color: #f0609d;
+    border-width: 2px;
+    border-radius: 10px;
+    place-content: center;
+    font-size:small;
     font-weight:500;
-    align-self: center;
-    margin:80px;
-
-}
+    color:#276a1a;
+    z-index: 1;
+ }
 
 
 
 img { 
-width: 130px;
-height:130px;
+width: 110px;
+height:110px;
 }
 
 #butterfly {
@@ -96,11 +107,15 @@ height:130px;
     filter: hue-rotate(70%);
 }
 
-#flower {
-filter: brightness(50%);
-filter: contrast(100%);
-filter: invert(90%);
+
+#snail {
+    transform: scaleX(-1);
+    height: 80px;
+    width: 110px;
+    margin-top: -135px;
 }
+
+
 
 
 
@@ -144,14 +159,7 @@ align-content:center;
 
 
 
-.multicolortext {
-    background-image: linear-gradient(to right, violet, rgb(195, 72, 219), cornflowerblue, green, violet, orange, #00d4ff, #be3fcd);
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    font-size:50px;
-  }
+
  
 
   
