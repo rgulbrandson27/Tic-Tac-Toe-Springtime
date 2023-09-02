@@ -1,24 +1,64 @@
 let gameActive = true;
 let currentPlayer = "Player X";
-// let whoseTurn = $('h1');
-const whoseTurn = document.getElementById("whoseTurn");
+
 let playerXArray = [];
 let playerOArray = [];
 
-// let cell = $('.cell');
-whoseTurn.innerHTML = "X's Turn";
-// cell.addEventListener("mouseover", changeColor());
+let cell = $('.cell');
+cell.addEventListener("onmouseover", changeColor());
 
-// function changeColor () {
-//    if (currentPlayer === "Player X") {
-//       e.style="background-color:blue"
-//    }  else {
-//       e.style="background-color=pink"
+function changeColor(cell) {
+   cell.style="background-color=pink";
+}
+
+
+
+
+
+
+// function hoverEffect() {
+//    cell.style="background-color=pink";
+   // if (currentPlayer === "Player X") {
+   //    cell.style="background-color:blue"
+   //     }  else {
+   //        cell.style="background-color=pink"
+   //     }
+    
+
+   // const x = document.createElement("img");
+   // x.setAttribute("src", "images/ButterflyXPurple.png");
+   // x.setAttribute("id", "light-butterfly");
+
+   // const o = document.createElement('img');
+   // o.setAttribute("src", "images/FlowerOPastel.png");
+   // o.setAttribute("id", "light-flower");
+
+   // if (currentPlayer === "Player X") {
+   //    e.append(x);
+   //    } else {
+   //    e.append(o);
+   //    }
+   
+
+
+      
+
+// function removeChange(e) {
+//    if (e.style="background-color: lightblue") {
+//       e.style="background-color: yellow";
 //    }
 // }
 
-function updateCellStatus(e) {
 
+// function hoverEffect(e) {
+//    const x = document.createElement("img");
+//    x.setAttribute("src", "images/ButterflyXPurple.png");
+//    x.setAttribute("id", "butterfly");
+
+
+
+function updateCellStatus(e) {
+  
    const x = document.createElement("img");
    x.setAttribute("src", "images/ButterflyXPurple.png");
    x.setAttribute("id", "butterfly");
@@ -27,33 +67,30 @@ function updateCellStatus(e) {
    o.setAttribute("src", "images/FlowerOPastel.png");
    o.setAttribute("id", "flower");
 
-   let whoseTurn = $('h1');
+   const whoseTurn = document.getElementById("whoseTurn");
+
+  
 
    if (currentPlayer === "Player X") {
       e.append(x);
       playerXArray.push(parseInt(e.id.charAt(5)));
-      whoseTurn.innerText = "Y's Turn";
+      whoseTurn.innerHTML = "O's Turn";
       } else {
       e.append(o);
       playerOArray.push(parseInt(e.id.charAt(5)))
-      whoseTurn.innerHTML = "O's Turn";
+      whoseTurn.innerHTML = "X's Turn";
       }
 
+  
+
    e.removeAttribute("onclick");
-   
+   function changeCursor () {
+      e.style.cursor= "not-allowed";
+   }
+   setTimeout(changeCursor, 2000);
    console.log(`Player X: [${playerXArray}] Player O: [${playerOArray}]`);
    
    currentPlayer = currentPlayer === "Player X" ? "Player O" : "Player X";
-
-   // whoseTurn.innerHTML = "O's Turn";
-
-   // if (currentPlayer === "Player O") {
-   //    $(#whoseTurn).innerHTML = "O's Turn";
-   // }  else {
-   //   $(#whoseTurn).innerHTML = "X's Turn";
-   // }
-
-
    }
    
    let winCombinations =  (4, 5, 6);

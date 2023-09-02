@@ -16,14 +16,14 @@ body{
     font-size:30px;
   }
 
-/* @import url(1001fonts.com/nebulo-font.html); 
+/* @import url("Week-11-JQuery_and_AJAX/tic-tac-toe/Nebulo Demo.ttf"); */
 
 
 
   @font-face { 
-    font-family: ‘nebulo’; 
-    src: url(1001fonts.com/nebulo-font.html); 
-}  */
+    font-family: "nebulo"; 
+    src: url("./Nebulo Demo.ttf"); 
+} 
 
 h1{
     /* color: #177f94; */
