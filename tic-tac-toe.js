@@ -80,15 +80,46 @@ function updateCellStatus(e) {
    if (currentPlayer === "Player X") {
       e.append(x);
       playerXArray.push(parseInt(e.id.charAt(5)));
-      console.log(playerXArray);
+      // console.log(playerXArray);
+
+      let i = [1,5,9]; 
+
+      let combinedArray = new Set([...i, ...playerXArray]);
+      console.log(combinedArray);
+      console.log(combinedArray.size);
 
 
-      winCombinations.forEach(winCombination => {
-         let combined = new Set([...winCombination, ...playerXArray]);
+      combinedArray.size === playerXArray.length ? console.log("X Wins") : console.log("no winner yet");
+   
+
+   // playerXArray.forEach(checkForWin);
+
+   // let checkForWin = (playerXArray, i) => {
+   //    return i.every((el) => {
+   //       return playerXArray.includes(el)
+   //    })
+   // }
+   // console.log(checkForWin((playerXArray, i)));
+      
+   
+   
+      // winCombinations.forEach(winCombination => {
+         // let combined = new Set([...winCombination, ...playerXArray]);
          // console.log(combined);
+         // playerXArray.includes(winCombinations) ? console.log('yes') : console.log('no');
          
-      })
+      // playerXArray.find(winCombinations);
+      // console.log()
 
+      // const containsWin = playerXArray.find((winCombination) => {
+         
+      // })
+
+      // winCombinations.forEach(winCombination => {
+      //    playerXArray.includes(winCombination) ? console.log('e') : console.log('no');
+      // const includesWin = playerXArray.includes(winCombination)
+      // console.log(includesWin);
+      
      
       $('#whoseTurn').text("O's Turn")
       // whoseTurn.innerHTML = "O's Turn";
