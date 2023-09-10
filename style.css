@@ -103,8 +103,16 @@ height:110px;
 }
 
 #butterfly {
-    filter: brightness(220%);
-    filter: hue-rotate(70%);
+    filter: brightness(120%);
+
+   
+
+    /* background-color:#00d4ff; */
+}
+
+#flower {
+    filter: brightness(90%);
+   
 }
 
 

@@ -4,15 +4,23 @@ let currentPlayer = "Player X";
 let playerXArray = [];
 let playerOArray = [];
 
-let cell = $('.cell');
-cell.addEventListener("onmouseover", changeColor());
-
-function changeColor(cell) {
-   cell.style="background-color=pink";
-}
+// let cell =  $('.cell');
 
 
+// $(.cell).forEach( (cell, index) => {
+//    $(.cell).addEventListener('click', () = )
+// })
 
+// cell.on('mouseover', () => {
+//    cell:style.backgroundColor = "blue";  
+//    // style="background-color=pink";
+// });
+
+
+
+// tiles.forEach( (tile, index) => {
+//    tile.addEventListener('click', () => userAction(tile, index));
+// });
 
 
 
@@ -54,85 +62,78 @@ function changeColor(cell) {
 //    const x = document.createElement("img");
 //    x.setAttribute("src", "images/ButterflyXPurple.png");
 //    x.setAttribute("id", "butterfly");
+// $('.cell').onclick(
 
+// cell.addEventListener('onclick', updateCellStatus);
 
 
 function updateCellStatus(e) {
   
    const x = document.createElement("img");
-   x.setAttribute("src", "images/ButterflyXPurple.png");
+   x.setAttribute("src", "images/ButterflyX.png");
    x.setAttribute("id", "butterfly");
 
    const o = document.createElement('img');
    o.setAttribute("src", "images/FlowerOPastel.png");
    o.setAttribute("id", "flower");
 
-   const whoseTurn = document.getElementById("whoseTurn");
-
-  
-
    if (currentPlayer === "Player X") {
       e.append(x);
       playerXArray.push(parseInt(e.id.charAt(5)));
-      whoseTurn.innerHTML = "O's Turn";
+      console.log(playerXArray);
+
+
+      winCombinations.forEach(winCombination => {
+         let combined = new Set([...winCombination, ...playerXArray]);
+         // console.log(combined);
+         
+      })
+
+     
+      $('#whoseTurn').text("O's Turn")
+      // whoseTurn.innerHTML = "O's Turn";
       } else {
       e.append(o);
       playerOArray.push(parseInt(e.id.charAt(5)))
-      whoseTurn.innerHTML = "X's Turn";
+      $('#whoseTurn').text("X's Turn");
+      // whoseTurn.innerHTML = "X's Turn";
       }
 
-  
+   // function checkforXWin() {
+   
+      
+      
 
-   e.removeAttribute("onclick");
+   e.removeAttribute("onclick");          /* additional feature */
    function changeCursor () {
       e.style.cursor= "not-allowed";
    }
    setTimeout(changeCursor, 2000);
-   console.log(`Player X: [${playerXArray}] Player O: [${playerOArray}]`);
+   console.log(`Player X: [${playerXArray}]`);
    
+   // Player O: [${playerOArray}
+
    currentPlayer = currentPlayer === "Player X" ? "Player O" : "Player X";
-   }
-   
-   let winCombinations =  (4, 5, 6);
-
-   
-   //('4', '5', '6') || ('1', '2', '3');
+   };
 
 
- //  let winners = [a, b, c];
+   const winCombinations = [
+      [1, 2, 3], [4, 5, 6], [7, 8, 9],     /* horizontal */
+      [1, 4, 7], [2, 5, 8], [3, 6, 9],     /* vertical   */
+      [1, 5, 9], [3, 5, 7]                 /* diagonal   */
+   ];
 
+//keep in case I want to play around with something different
+   // const winCombination = 
+   //    [1, 2, 3] || [4, 5, 6] || [7, 8, 9] ||      /* horizontal */
+   //    [1, 4, 7] || [2, 5, 8] ||  [3, 6, 9] ||     /* vertical   */
+   //    [1, 5, 9] || [3, 5, 7];                     /* diagonal   */
 
-   // winners.some(hasAWinningLetter);
-   // function hasAWinningLetter(letter) {
-   //    return letter.includes
-   // }
-   
-   //= winner.includes()
-   // winCombinations.some(checkForWinner)
-
-   // function checkForWinner(playerOArray) {
-   //    playerOArray
-  // }= winCombination.some();
 
 //function checkForWinner(playerOArray) = playerOArray.includes(winCombination);
 
-      // ('4', '5', '6')   |
-      // ('1', '2', '3')
-   ;
-   
-      // (1,2,3) || 
-// (4 && 5 && 6) || 
-// (7,8,9) || 
-// (1,4,7) || 
-// (2,5,8) || 
-// (3,6,9) || 
-// (1,5,9) || 
-// (3,5,7)
-
-//console.log(playerOArray in winCombination);
-
   console.log(playerOArray.includes(winCombinations));
-   //checkForWinner();
+
  
 
 function resetGame(e) {
@@ -146,16 +147,7 @@ function resetGame(e) {
 }
 console.log(`Player X: [${playerXArray}] Player O: [${playerOArray}]`);
 
-//function checkForWinner() {
-   // if (playerXArray.includes('1') === true) {
-   //    console.log("X Wins") 
-   // }  else if 
-      //console.log(playerOArray.includes('3'))
-   //     {
-   //    console.log("O Wins")
-   // }  else {
-   //    console.log("No winner yet")
-   // }
+
 
 
 
@@ -189,3 +181,4 @@ console.log(`Player X: [${playerXArray}] Player O: [${playerOArray}]`);
 // function checkForWinner() {
 //     if (containsX = true )
 // }
+
