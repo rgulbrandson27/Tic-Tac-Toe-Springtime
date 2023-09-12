@@ -1,3 +1,5 @@
+// MICHAELS NOTE IS HERE
+
 let gameActive = true;
 let currentPlayer = "Player X";
 
