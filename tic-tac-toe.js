@@ -17,12 +17,12 @@ function updateCellStatus(e) {
    if (currentPlayer === "Player X") {
       e.append(x);
       playerXArray.push(parseInt(e.id.charAt(5)));
-      $('#whoseTurn').text("O's Turn").css("color", "black");
+      $('#whoseTurn').text("O's Turn").css("color", "#84d9a5");
 
       } else {
       e.append(o);
       playerOArray.push(parseInt(e.id.charAt(5)))
-      $('#whoseTurn').text("X's Turn").css("color", "pink");
+      $('#whoseTurn').text("X's Turn").css("color", "#cf1b99");
       }
    
    console.log(`Player X: [${playerXArray}] Player O: [${playerOArray}]`);
@@ -45,6 +45,25 @@ function checkForWin() {
       [1, 5, 9], [3, 5, 7]                 /* diagonal   */
    ];
 
+
+/*
+HERE - add animation effect for winner.
+
+create function for animation effect ex. "winnerBlinkEffect()"
+let "winning squares" equal the three children that created the win (match a winCombination)
+-this wil be super fun to figure out how to do
+winning squares - fade in and fade out a total of three times while also increasing in size
+and then "land" back on the page slightly larger than the others
+
+reminder to self - the images already have IDs assigned so those should be able to be used.
+*/
+
+
+
+
+//add - if all cell elements contain a child element, $('#whoseTurn') will say No Winner This Time
+
+
    if (currentPlayer === "Player X") {
       winCombinations.forEach((subWinArray) => {
          let combinedArrays = new Set([...subWinArray, ...playerXArray]);
@@ -53,6 +72,7 @@ function checkForWin() {
             whoseTurn.innerHTML = "X Wins!";
             gameActive = false;
             document.body.style.cursor="not-allowed";
+            winnerBlinkEffect();
          }
       
       })
