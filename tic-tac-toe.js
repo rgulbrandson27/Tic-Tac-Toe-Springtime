@@ -59,7 +59,7 @@ reminder to self - the images already have IDs assigned so those should be able 
 */
 
 
-
+//add - find a way to get the not allowed symbol always present after a winner except win over snail or new game button
 
 //add - if all cell elements contain a child element, $('#whoseTurn') will say No Winner This Time
 
@@ -69,11 +69,13 @@ reminder to self - the images already have IDs assigned so those should be able 
          let combinedArrays = new Set([...subWinArray, ...playerXArray]);
     
          if (combinedArrays.size === playerXArray.length) {
-            whoseTurn.innerHTML = "X Wins!";
+            $('#whoseTurn').text("X Wins!").css("color", "#cf1b99");
             gameActive = false;
             document.body.style.cursor="not-allowed";
             winnerBlinkEffect();
          }
+
+         
       
       })
          }  else {
@@ -81,7 +83,7 @@ reminder to self - the images already have IDs assigned so those should be able 
          let combinedArrays = new Set([...subWinArray, ...playerOArray]);
 
          if (combinedArrays.size === playerXArray.length) {
-            whoseTurn.innerHTML = "O Wins!";    
+            $('#whoseTurn').text("O Wins!").css("color", "#84d9a5");   
             gameActive = false;
             document.body.style.cursor="not-allowed";
                }
