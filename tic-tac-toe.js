@@ -6,6 +6,7 @@ let playerOArray = [];
 
 function updateCellStatus(e) {
    if (gameActive === true) {
+
    const x = document.createElement("img");
    x.setAttribute("src", "images/ButterflyX.png");
    x.setAttribute("id", "butterfly");
@@ -26,8 +27,9 @@ function updateCellStatus(e) {
       }
    
    console.log(`Player X: [${playerXArray}] Player O: [${playerOArray}]`);
+
    checkForWin();
-   
+
    e.removeAttribute("onclick");          /* displays not-allowed symbol over cell */
    function changeCursor () {
    e.style.cursor= "not-allowed";
@@ -61,22 +63,17 @@ reminder to self - the images already have IDs assigned so those should be able 
 
 //add - find a way to get the not allowed symbol always present after a winner except win over snail or new game button
 
-//add - if all cell elements contain a child element, $('#whoseTurn') will say No Winner This Time
+// if((PlayerXArray || PlayerOArray) > 4) () => $('#whoseTurn').text("You're both looooosers.").css("color", "#964B00");
 
-
-   if (currentPlayer === "Player X") {
+if (currentPlayer === "Player X") {
       winCombinations.forEach((subWinArray) => {
          let combinedArrays = new Set([...subWinArray, ...playerXArray]);
-    
          if (combinedArrays.size === playerXArray.length) {
             $('#whoseTurn').text("X Wins!").css("color", "#cf1b99");
             gameActive = false;
             document.body.style.cursor="not-allowed";
-            winnerBlinkEffect();
+            //winnerBlinkEffect();  
          }
-
-         
-      
       })
          }  else {
       winCombinations.forEach((subWinArray) => {
@@ -88,11 +85,11 @@ reminder to self - the images already have IDs assigned so those should be able 
             document.body.style.cursor="not-allowed";
                }
            })
-      
       }
-   }
-  
-
+      if (playerXArray.length > 4) {
+         $('#whoseTurn').text("No winner, try again!").css("color",  ":#00d4ff");      
+         }
+}
 function resetGame(e) {
    let allCells = $('.cell');
    allCells.empty(e);
