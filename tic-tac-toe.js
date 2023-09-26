@@ -35,10 +35,14 @@ function updateCellStatus(e) {
    e.style.cursor= "not-allowed";
    }
    
-      setTimeout(changeCursor, 1000);
-      currentPlayer = currentPlayer === "Player X" ? "Player O" : "Player X";
-      }
+   setTimeout(changeCursor, 1000);
+   currentPlayer = currentPlayer === "Player X" ? "Player O" : "Player X";
+      }   
+if ((playerXArray.length > 4) && (gameActive === true)) {
+   $('#whoseTurn').text("No winner, try again!").css("color",  ":#00d4ff");  
 }
+}
+
 
 function checkForWin() {
    let winCombinations = [
@@ -47,31 +51,19 @@ function checkForWin() {
       [1, 5, 9], [3, 5, 7]                 /* diagonal   */
    ];
 
-
-/*
-- add animation effect for winner.
-- create function for animation effect ex. "winnerBlinkEffect()"
-- let "winning squares" equal the three children that created the win (match a winCombination)
-- inning squares - fade in and fade out a total of three times while also increasing in size
-  and then "land" back on the page slightly larger than the others
-  reminder to self - the images already have IDs assigned so those should be able to be used.
-*/
-
-
-if (currentPlayer === "Player X") {
+   if (currentPlayer === "Player X") {
       winCombinations.forEach((subWinArray) => {
-         let combinedArrays = new Set([...subWinArray, ...playerXArray]);
-         if (combinedArrays.size === playerXArray.length) {
-            $('#whoseTurn').text("X Wins!").css("color", "#cf1b99");
-            gameActive = false;
-            document.body.style.cursor="not-allowed";
-            //winnerBlinkEffect();  
+      let combinedArrays = new Set([...subWinArray, ...playerXArray]);
+      if (combinedArrays.size === playerXArray.length) {
+         $('#whoseTurn').text("X Wins!").css("color", "#cf1b99");
+         gameActive = false;
+         document.body.style.cursor="not-allowed";
+         //winnerBlinkEffect();  
          }
       })
-         }  else {
+      }  else {
       winCombinations.forEach((subWinArray) => {
          let combinedArrays = new Set([...subWinArray, ...playerOArray]);
-
          if (combinedArrays.size === playerXArray.length) {
             $('#whoseTurn').text("O Wins!").css("color", "#84d9a5");   
             gameActive = false;
@@ -79,10 +71,8 @@ if (currentPlayer === "Player X") {
                }
            })
       }
-      if (playerXArray.length > 4) {
-         $('#whoseTurn').text("No winner, try again!").css("color",  ":#00d4ff");      
-         }
 }
+
 function resetGame(e) {
    let allCells = $('.cell');
    allCells.empty(e);

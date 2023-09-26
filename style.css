@@ -16,16 +16,13 @@ body{
     font-size:30px;
   }
 
-/* @import url("Week-11-JQuery_and_AJAX/tic-tac-toe/Nebulo Demo.ttf"); */
-
-
-
+/* @import url("Week-11-JQuery_and_AJAX/tic-tac-toe/Nebulo Demo.ttf"); 
   @font-face { 
     font-family: "nebulo"; 
     src: url("./Nebulo Demo.ttf"); 
-} 
+}  */
 
-h1{
+h1 {
     /* color: #177f94; */
     color:#00d4ff;
     margin-top: 14px;
@@ -45,10 +42,7 @@ h1{
     position: relative;
     margin-bottom: 50px;
     z-index:0;
-    /* justify-content: center;
-    align-content: center; */
-    
-    }
+}
 
 .cell {
     width: 120px;
@@ -58,13 +52,8 @@ h1{
     position: absolute;
     justify-content: center;
     align-items: center;
-    /* border-radius: 0.5rem; */
-    /* position:relative; */
-    /* justify-content:center;
-    align-content:center; */
     z-index:1;
 }
-
 
 #cell-1 {top:0; left:0;}
 #cell-2 {top:0; left:130px;}
@@ -76,13 +65,11 @@ h1{
 #cell-8 {left:130px; bottom:0;} 
 #cell-9 {right:0; bottom:0;}   
 
-
 button{
     width: 86px;
     height: 26px;
     margin-top: 40px;
     margin: 40px;
-   
     border-style: solid;
     background-color:#fdffb6;
     border-color: #f0609d;
@@ -95,8 +82,6 @@ button{
     z-index: 1;
  }
 
-
-
 img { 
 width: 110px;
 height:110px;
@@ -104,15 +89,11 @@ height:110px;
 
 #butterfly {
     filter: brightness(120%);
-
-   
-
     /* background-color:#00d4ff; */
 }
 
 #flower {
     filter: brightness(90%);
-   
 }
 
 
@@ -122,32 +103,3 @@ height:110px;
     width: 110px;
     margin-top: -135px;
 }
-
-
-
-/* background-color:rgb(246, 221, 109);
-color:#6531b4;
-z-index:2;
-padding: 0; */
-/* display:flex; */
-/* position: absolute;
-place-self:center;
-align-self:center; */
-/* top:15px;
-right:15px; */
-/* filter: invert(100%);
--webkit-filter: invert(100%); */
-
-
-
-/* #y{
-    width:140px;
-    height:140px;
-    background-color:rgb(246, 221, 109);
-    color:#6531b4;
-    z-index:1000;
-    display:flex;
-    position:relative;
-    justify-content:center;
-    align-content:center; 
-} */
