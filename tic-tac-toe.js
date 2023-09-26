@@ -49,21 +49,14 @@ function checkForWin() {
 
 
 /*
-HERE - add animation effect for winner.
-
-create function for animation effect ex. "winnerBlinkEffect()"
-let "winning squares" equal the three children that created the win (match a winCombination)
--this wil be super fun to figure out how to do
-winning squares - fade in and fade out a total of three times while also increasing in size
-and then "land" back on the page slightly larger than the others
-
-reminder to self - the images already have IDs assigned so those should be able to be used.
+- add animation effect for winner.
+- create function for animation effect ex. "winnerBlinkEffect()"
+- let "winning squares" equal the three children that created the win (match a winCombination)
+- inning squares - fade in and fade out a total of three times while also increasing in size
+  and then "land" back on the page slightly larger than the others
+  reminder to self - the images already have IDs assigned so those should be able to be used.
 */
 
-
-//add - find a way to get the not allowed symbol always present after a winner except win over snail or new game button
-
-// if((PlayerXArray || PlayerOArray) > 4) () => $('#whoseTurn').text("You're both looooosers.").css("color", "#964B00");
 
 if (currentPlayer === "Player X") {
       winCombinations.forEach((subWinArray) => {
