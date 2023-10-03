@@ -1,6 +1,3 @@
-LOGIC
-Just need to remove event listener upon game win conditions being met.  Tried a few things but they affected other program features.  Shouldn't take too long.
-
 Could add date feature so that the screen defaults to current season.
 
 
