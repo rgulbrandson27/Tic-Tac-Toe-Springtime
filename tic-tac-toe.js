@@ -30,7 +30,7 @@ function updateCellStatus(e) {
 
    checkForWin();
 
-   e.removeAttribute("onclick");          /* displays not-allowed symbol over cell */
+   e.removeAttribute("onclick");         
    function changeCursor () {
    e.style.cursor= "not-allowed";
    }
